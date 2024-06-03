@@ -6,7 +6,7 @@
 
 </head>
 <body>
-    <x-menu/>
+    <x-Navbar/>
     <header>
         <ul>
             @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
