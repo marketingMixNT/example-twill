@@ -14,15 +14,16 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('{slug}', [\App\Http\Controllers\PageDisplayController::class, 'show'])->name('frontend.page');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('{slug}', [\App\Http\Controllers\PageDisplayController::class, 'show'])->name('frontend.page');
 
 
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
     'middleware' => ['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
 ], function () {
+    Route::get('/', [\App\Http\Controllers\PageDisplayController::class, 'home'])->name('frontend.home'); 
     Route::get('{slug}', [\App\Http\Controllers\PageDisplayController::class, 'show'])->name('frontend.page');
 });

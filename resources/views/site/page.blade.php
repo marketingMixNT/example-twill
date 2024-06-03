@@ -23,7 +23,7 @@
         </ul>
     </header> 
 
-    <div class="text-center mt-24">
+    {{-- <div class="text-center mt-24">
 
         <br />
         <h1 class="text-5xl">
@@ -35,11 +35,11 @@
             {{ $item->description }}
 
         </p>
-    </div>
-
-
-    {{-- <div class="mx-auto max-w-2xl">
-        {!! $item->renderBlocks() !!}
     </div> --}}
+
+
+    <div class="mx-auto max-w-2xl">
+        {!! $item->renderBlocks() !!}
+    </div>
 </body>
 </html>
